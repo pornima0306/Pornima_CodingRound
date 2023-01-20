@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header bg-danger text-white" *ngIf="!canEdit">
+        <strong>You can not Edit this Product</strong>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="pname">Product Name</label>
+            <input type="text" class="form-control" #pName [value]="prodObj?.pName"
+            [disabled]="!canEdit">
+        </div>
+        <div class="form-group">
+            <label for="pstatus">Product Status</label>
+            <select id="pstatus" class="form-control" #pStatus [value]="prodObj?.pStatus" [disabled]="!canEdit">
+                <option value="In Progress">In Progress</option>
+                <option value="Dispached">Dispached</option>
+                <option value="Delivered">Delivered</option>
+                
+            </select>
+        </div>
+        <button class="btn" [disabled]="!canEdit"
+        [ngClass]="{'btn-outline-danger' : prodObj?.pStatus === 'In Progress',
+                    'btn-outline-warning' : prodObj?.pStatus === 'Dispached',
+                    'btn-outline-success' : prodObj?.pStatus === 'Delivered' }"
+                    (click)="updateProduct(pName.value,pStatus.value)">
+                    Update Product</button>
+    </div>
+</div>

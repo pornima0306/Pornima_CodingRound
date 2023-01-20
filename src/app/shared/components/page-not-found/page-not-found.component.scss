@@ -1,0 +1,24 @@
+img{
+    height: 90vh;
+    position: relative;
+    
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: centerd;
+    width:100%;
+    /* position : fixed; */
+    top:0;
+    left:0;
+
+}
+.goHome {
+    position: absolute;
+    z-index: 1;
+    top: 264px;
+    left: 217px;
+    padding: 24px 51px;
+    font-size: 20px;
+    border: #fff;
+    border-radius: 22px;
+}

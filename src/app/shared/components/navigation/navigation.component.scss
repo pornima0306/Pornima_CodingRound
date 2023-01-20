@@ -1,0 +1,14 @@
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    color: orange;
+    font-size: 20px;
+}
+
+.Logo{
+    height: 76px;
+    width: 80px;
+    border-radius: 50%;
+    &:hover{
+        border: 4px solid orange;
+        transform: translateY(3px);
+    }
+}

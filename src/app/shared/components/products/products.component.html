@@ -1,0 +1,24 @@
+<div class="row mt-4">
+    <div class="col-md-5">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let prod of productArray" 
+            [class.active]="prod.pId === selectedProduct"
+            [routerLink]="['/products', prod.pId]"
+            [queryParams]="{canEdit : prod.editProduct }"
+            (click)="selectedProduct =prod.pId">   <!--1) by using absolute path 2) queryParams is an object-->
+            
+            <!-- <li class="list-group-item" *ngFor="let prod of productArray" 
+            [class.active]="prod.pId === selectedProduct"
+            [routerLink]="[prod.pId, 'edit']">  --><!-- by using relative path -->
+            
+            {{prod.pName}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <!-- <app-product></app-product>
+        <app-edit-product></app-edit-product> -->
+        <router-outlet></router-outlet> <!-- for child routing -->
+
+    </div>
+</div>

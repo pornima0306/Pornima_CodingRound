@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header" 
+            [ngClass]="{'bg-danger' : prodObj?.pStatus === 'In Progress',
+        'bg-warning' : prodObj?.pStatus === 'Dispached',
+        'bg-success' : prodObj?.pStatus === 'Delivered' }">
+                <strong>Details of {{prodObj?.pName}}</strong>
+            </div>
+            <div class="card-body" 
+            [ngClass]="{'alert-danger' : prodObj?.pStatus === 'In Progress',
+                    'alert-warning' : prodObj?.pStatus === 'Dispached',
+                    'alert-success' : prodObj?.pStatus === 'Delivered' }">
+                <p>The Name of the Product is : <strong class="text-warning" 
+                    [ngClass]="{'text-danger' : prodObj?.pStatus === 'In Progress',
+                    'text-warning' : prodObj?.pStatus === 'Dispached',
+                    'text-success' : prodObj?.pStatus === 'Delivered' }">
+                    {{prodObj?.pName}}</strong></p>
+                <!-- <p>The Id of the Product is : <strong class="text-warning">{{prodObj?.pId}}</strong></p>  -->
+                <p>The Status of the Product is : <strong class="text-warning" 
+                    [ngClass]="{'text-danger' : prodObj?.pStatus === 'In Progress',
+                    'text-warning' : prodObj?.pStatus === 'Dispached',
+                    'text-success' : prodObj?.pStatus === 'Delivered' }">
+                    {{prodObj?.pStatus}}</strong></p> 
+
+                    <button class="btn" 
+                    [ngClass]="{'btn-outline-danger' : prodObj?.pStatus === 'In Progress',
+                    'btn-outline-warning' : prodObj?.pStatus === 'Dispached',
+                    'btn-outline-success' : prodObj?.pStatus === 'Delivered' }" 
+                    [routerLink]="['/products', prodObj?.pId, 'edit']"
+                    [queryParamsHandling]="'preserve'">
+                    Edit Product</button>
+            </div>
+        </div>
+    </div>
+</div>
